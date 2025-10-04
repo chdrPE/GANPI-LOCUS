@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Brand palette */
+    --color-brand-purple: 255 90 246; /* #FF5AF6 */
+    --color-brand-blue:  93 135 255;  /* #5D87FF */
+    --color-brand-white: 250 250 252; /* near white */
+
+    /* Semantic */
+    --background: 6 6 10;  /* deep near-black */
+    --foreground: 232 234 237;
+    --muted: 144 148 158;
+    --card: 12 12 18;
+    --border: 34 35 42;
+  }
+
+  .light {
+    --background: 250 250 252;
+    --foreground: 20 20 24;
+    --muted: 94 98 110;
+    --card: 255 255 255;
+    --border: 230 232 238;
+  }
+
+  html, body, #__next {
+    height: 100%;
+  }
+
+  body {
+    color: rgb(var(--foreground));
+    background-color: rgb(var(--background));
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer utilities {
+  .bg-background { background-color: rgb(var(--background)); }
+  .text-foreground { color: rgb(var(--foreground)); }
+  .text-muted { color: rgb(var(--muted)); }
+  .bg-card { background-color: rgb(var(--card)); }
+  .border-default { border-color: rgb(var(--border)); }
+  .brand-gradient {
+    background-image: radial-gradient(1200px 600px at 10% -10%, rgba(var(--color-brand-purple),0.25), transparent 60%),
+      radial-gradient(800px 400px at 90% -10%, rgba(var(--color-brand-blue),0.25), transparent 60%),
+      radial-gradient(1000px 500px at 50% -20%, rgba(255,255,255,0.05), transparent 60%);
+  }
+  .glass {
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.06),
+        rgba(255,255,255,0.02)
+      );
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: saturate(140%) blur(14px);
+  }
+  .button-shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .button-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: translateX(-200%);
+  }
+  .button-shine:hover::after {
+    transition: transform 800ms ease;
+    transform: translateX(200%);
+  }
+}
+
+/* Background subtle grid */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mask-image: radial-gradient(80% 60% at 50% 10%, black, transparent 70%);
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.25;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
