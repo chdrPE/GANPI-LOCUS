@@ -126,7 +126,7 @@ export default function Page() {
                   <h3 className="font-semibold text-lg mb-1">{founder.name}</h3>
                   <p className="text-sm text-muted mb-4">{founder.role}</p>
                   <p className="text-sm text-muted italic leading-relaxed mb-4 flex-grow">
-                    "{founder.quote}"
+                    &ldquo;{founder.quote}&rdquo;
                   </p>
                   
                   {/* Social Media Links */}
@@ -220,7 +220,7 @@ export default function Page() {
           
           <div className="max-w-4xl mx-auto">
             <p className="text-base sm:text-lg text-muted leading-relaxed text-center">
-              We're building toward a future where every developer can harness the full power of their terminal 
+              We&apos;re building toward a future where every developer can harness the full power of their terminal 
               through natural conversation. Our roadmap includes advanced context awareness, multi-language support, 
               seamless IDE integration, and a thriving open-source community. We envision GANPI becoming the 
               standard interface for human-AI collaboration in development workflows, making complex technical 
