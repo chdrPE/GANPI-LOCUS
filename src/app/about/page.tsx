@@ -22,7 +22,7 @@ const founders = [
     linkedin: "https://www.linkedin.com/in/rodrigo-fidel-b69468237/"
   },
   {
-    name: "Raul Romero",
+    name: "Raul Gomero",
     role: "Hacker",
     quote: "The terminal should understand you as naturally as you speak to a colleague.",
     image: "/founder-placeholder.jpg",

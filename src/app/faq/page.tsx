@@ -14,11 +14,7 @@ const faqData = [
       },
       {
         question: "How do I install GANPI?",
-        answer: "Download the latest release for your platform from our releases page. Extract the binary, add it to your PATH, and run 'ganpi setup' to configure your Gemini API key. The setup process takes less than 2 minutes."
-      },
-      {
-        question: "Do I need a Gemini API key?",
-        answer: "Yes, GANPI requires a Gemini API key to function. You can get one free from Google AI Studio. The free tier includes generous usage limits that should cover most personal use cases."
+        answer: "Click the download link on the Home page to get the latest release. After downloading, click on build_windows.bat and then add the path to Ganpi\\build\\Release to your environment PATH."
       }
     ]
   },
@@ -33,14 +29,6 @@ const faqData = [
       {
         question: "What types of commands can GANPI generate?",
         answer: "GANPI can handle file operations, text processing, system administration, development tasks, network operations, and more. It understands context and can work with complex multi-step operations."
-      },
-      {
-        question: "Can I use GANPI interactively?",
-        answer: "Yes! GANPI has an interactive mode where you can have a conversation with your terminal. Just run 'ganpi chat' to start an interactive session that remembers context."
-      },
-      {
-        question: "Does GANPI support command history?",
-        answer: "Absolutely. GANPI maintains a history of your commands and can reference previous operations to provide better context-aware suggestions."
       }
     ]
   },
@@ -59,46 +47,6 @@ const faqData = [
       {
         question: "What data does GANPI send to Gemini?",
         answer: "Only your natural language requests are sent to Gemini. Your actual file contents, system information, or personal data are never transmitted. Commands are generated locally based on the AI response."
-      }
-    ]
-  },
-  {
-    category: "Platform & Compatibility",
-    icon: "💻",
-    questions: [
-      {
-        question: "Which platforms are supported?",
-        answer: "GANPI supports macOS, Linux, and Windows (via WSL or compatible shells). We provide pre-built binaries for the most common architectures."
-      },
-      {
-        question: "What shells are compatible?",
-        answer: "GANPI works with bash, zsh, fish, and PowerShell. It automatically detects your shell and adapts command syntax accordingly."
-      },
-      {
-        question: "Can I use GANPI in CI/CD pipelines?",
-        answer: "Yes, GANPI can be integrated into automated workflows. Use the '--non-interactive' flag to disable prompts and ensure smooth automation."
-      }
-    ]
-  },
-  {
-    category: "Troubleshooting",
-    icon: "🔧",
-    questions: [
-      {
-        question: "GANPI isn't generating the right commands. What should I do?",
-        answer: "Try being more specific in your requests. Include context about your operating system, current directory, or specific tools you want to use. You can also use 'ganpi explain' to understand why a command was generated."
-      },
-      {
-        question: "I'm getting API rate limit errors. How can I fix this?",
-        answer: "Rate limits are usually temporary. Wait a few minutes and try again. For heavy usage, consider upgrading your Gemini API plan or using GANPI's caching features to reduce API calls."
-      },
-      {
-        question: "The command preview looks wrong. Should I execute it?",
-        answer: "Never execute commands you don't understand. Use 'ganpi explain' to get a detailed breakdown, or modify your request to be more specific about what you want to achieve."
-      },
-      {
-        question: "How do I update GANPI?",
-        answer: "Download the latest release and replace your current binary. Your configuration and history will be preserved. You can also use 'ganpi version' to check your current version."
       }
     ]
   }
