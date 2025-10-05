@@ -74,10 +74,8 @@ function TypingText({ text, speed = 50, delay = 0, onComplete }: TypingAnimation
 
 export default function TypingAnimation() {
   const [index, setIndex] = useState(0);
-  const [phase, setPhase] = useState<'prompt' | 'command' | 'waiting'>('prompt');
   const [isVisible, setIsVisible] = useState(false);
   const [promptComplete, setPromptComplete] = useState(false);
-  const [commandComplete, setCommandComplete] = useState(false);
   
   const current = useMemo(() => EXAMPLES[index % EXAMPLES.length], [index]);
 
@@ -91,9 +89,7 @@ export default function TypingAnimation() {
     if (!isVisible) return;
 
     // Reset states when example changes
-    setPhase('prompt');
     setPromptComplete(false);
-    setCommandComplete(false);
   }, [index, isVisible]);
 
   useEffect(() => {
@@ -134,7 +130,6 @@ export default function TypingAnimation() {
                 speed={40}
                 onComplete={() => {
                   setPromptComplete(true);
-                  setPhase('command');
                 }}
               />
             ) : (
@@ -147,12 +142,6 @@ export default function TypingAnimation() {
               text={promptComplete ? current.command : ""} 
               speed={25}
               delay={promptComplete ? 300 : 0}
-              onComplete={() => {
-                if (promptComplete) {
-                  setCommandComplete(true);
-                  setPhase('waiting');
-                }
-              }}
             />
           </div>
         </motion.div>

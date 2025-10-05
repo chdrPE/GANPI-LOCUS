@@ -132,7 +132,7 @@ export default function Page() {
             }}>FAQ</span>
           </h1>
           <p className="text-lg text-muted max-w-2xl mx-auto">
-            Everything you need to know about GANPI. Can't find what you're looking for? 
+            Everything you need to know about GANPI. Can&apos;t find what you&apos;re looking for? 
             <a href="mailto:support@ganpi.dev" className="text-white hover:underline ml-1">Contact us</a>.
           </p>
         </motion.div>
