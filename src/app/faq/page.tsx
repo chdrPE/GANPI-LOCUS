@@ -113,7 +113,7 @@ export default function Page() {
       </div>
 
       {/* Content */}
-      <section className="relative mx-auto max-w-6xl px-6 pt-28 pb-16 sm:pt-32 sm:pb-24">
+      <section className="relative mx-auto max-w-6xl px-4 sm:px-6 pt-24 pb-12 sm:pt-32 sm:pb-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -126,19 +126,19 @@ export default function Page() {
             <span>Frequently Asked Questions</span>
           </div>
 
-          <h1 className="text-4xl font-semibold sm:text-6xl tracking-tight mb-6">
+          <h1 className="text-3xl font-semibold sm:text-4xl md:text-6xl tracking-tight mb-6">
             <span className="text-transparent bg-clip-text" style={{
               backgroundImage: "linear-gradient(90deg, rgba(255,90,246,1), rgba(93,135,255,1))",
             }}>FAQ</span>
           </h1>
-          <p className="text-lg text-muted max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted max-w-2xl mx-auto px-4 sm:px-0">
             Everything you need to know about GANPI. Can&apos;t find what you&apos;re looking for? 
             <a href="mailto:support@ganpi.dev" className="text-white hover:underline ml-1">Contact us</a>.
           </p>
         </motion.div>
 
         {/* FAQ Categories */}
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-12 px-4 sm:px-0">
           {faqData.map((category, categoryIndex) => (
             <motion.div
               key={category.category}
@@ -146,14 +146,14 @@ export default function Page() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
-              className="rounded-2xl glass border-default p-8"
+              className="rounded-2xl glass border-default p-4 sm:p-8"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-2xl">{category.icon}</span>
-                <h2 className="text-2xl font-semibold">{category.category}</h2>
+              <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                <span className="text-xl sm:text-2xl">{category.icon}</span>
+                <h2 className="text-xl sm:text-2xl font-semibold">{category.category}</h2>
               </div>
               
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {category.questions.map((faq, faqIndex) => (
                   <motion.div
                     key={faq.question}
@@ -161,9 +161,9 @@ export default function Page() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
                     transition={{ duration: 0.4, delay: faqIndex * 0.05 }}
-                    className="border-b border-default/30 pb-6 last:border-b-0 last:pb-0"
+                    className="border-b border-default/30 pb-4 sm:pb-6 last:border-b-0 last:pb-0"
                   >
-                    <h3 className="font-semibold text-lg mb-2 text-white/90">
+                    <h3 className="font-semibold text-base sm:text-lg mb-2 text-white/90">
                       {faq.question}
                     </h3>
                     <p className="text-muted leading-relaxed">
@@ -184,21 +184,21 @@ export default function Page() {
           transition={{ duration: 0.6 }}
           className="mt-16 text-center"
         >
-          <div className="rounded-2xl glass border-default p-8">
-            <h2 className="text-2xl font-semibold mb-4">Still need help?</h2>
+          <div className="rounded-2xl glass border-default p-4 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-4">Still need help?</h2>
             <p className="text-muted mb-6 max-w-2xl mx-auto">
               Our community and support team are here to help you get the most out of GANPI.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:support@ganpi.dev"
-                className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-white border border-default hover:bg-white/5 transition-colors"
+                className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-white border border-default hover:bg-white/5 transition-colors w-full sm:w-auto"
               >
                 📧 Contact Support
               </a>
               <a
                 href="https://github.com/ganpi/ganpi"
-                className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-white border border-default hover:bg-white/5 transition-colors"
+                className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-white border border-default hover:bg-white/5 transition-colors w-full sm:w-auto"
               >
                 🐙 GitHub Issues
               </a>
