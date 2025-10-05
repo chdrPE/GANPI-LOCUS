@@ -1,10 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 export default function TutorialContent() {
+  const pathname = usePathname();
+  
   return (
-    <main className="relative min-h-[60vh] overflow-hidden">
+    <main className="relative min-h-[60vh] overflow-hidden" key={pathname}>
       {/* Background */}
       <div className="hero-background">
         <div className="hero-grid" />
@@ -31,9 +34,8 @@ export default function TutorialContent() {
         {/* YouTube Video Placeholder */}
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           className="mt-8 mx-4 sm:mx-0 rounded-2xl glass border-default overflow-hidden shadow-[0_10px_60px_rgba(0,0,0,0.35)]"
         >
           <div className="aspect-video bg-card flex items-center justify-center relative">

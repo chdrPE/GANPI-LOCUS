@@ -5,6 +5,7 @@ import Link from "next/link";
 import { downloadUrl } from "@/lib/config";
 import TypingAnimation from "@/components/TypingAnimation";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const features = [
   {
@@ -46,9 +47,10 @@ function TypingTitle({ text, speed = 100, delay = 0 }: { text: string; speed?: n
 
 export default function Home() {
   const href = downloadUrl ?? "#";
+  const pathname = usePathname();
 
   return (
-    <main className="relative min-h-screen overflow-hidden">
+    <main className="relative min-h-screen overflow-hidden" key={pathname}>
       {/* Background */}
       <div className="hero-background">
         <div className="hero-grid" />
@@ -105,9 +107,8 @@ export default function Home() {
         {/* Animated examples carousel */}
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           className="mx-auto mt-12 w-full max-w-3xl rounded-2xl glass border-default shadow-[0_10px_60px_rgba(0,0,0,0.35)] mx-4 sm:mx-auto"
         >
           <div className="flex items-center justify-between px-4 py-3 border-b border-default/70">
@@ -123,13 +124,12 @@ export default function Home() {
 
         {/* Features */}
         <section id="learn-more" className="mt-16 sm:mt-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 px-4 sm:px-0">
-          {features.map((f) => (
+          {features.map((f, index) => (
             <motion.div
               key={f.title}
               initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.4 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
               className="rounded-2xl bg-card border border-default p-5 hover:shadow-[0_10px_40px_rgba(93,135,255,0.15)] transition-shadow"
             >
               <div className="text-2xl">{f.icon}</div>

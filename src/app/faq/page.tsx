@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const faqData = [
   {
@@ -104,8 +105,10 @@ const faqData = [
 ];
 
 export default function Page() {
+  const pathname = usePathname();
+  
   return (
-    <main className="relative min-h-screen overflow-hidden">
+    <main className="relative min-h-screen overflow-hidden" key={pathname}>
       {/* Background */}
       <div className="hero-background">
         <div className="hero-grid" />
@@ -143,9 +146,8 @@ export default function Page() {
             <motion.div
               key={category.category}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 + categoryIndex * 0.1 }}
               className="rounded-2xl glass border-default p-4 sm:p-8"
             >
               <div className="flex items-center gap-3 mb-4 sm:mb-6">
@@ -158,9 +160,8 @@ export default function Page() {
                   <motion.div
                     key={faq.question}
                     initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{ duration: 0.4, delay: faqIndex * 0.05 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.3 + categoryIndex * 0.1 + faqIndex * 0.05 }}
                     className="border-b border-default/30 pb-4 sm:pb-6 last:border-b-0 last:pb-0"
                   >
                     <h3 className="font-semibold text-base sm:text-lg mb-2 text-white/90">
@@ -179,9 +180,8 @@ export default function Page() {
         {/* Additional Help Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-16 text-center"
         >
           <div className="rounded-2xl glass border-default p-4 sm:p-8">
