@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,22 +44,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-full bg-background text-foreground`}
       >
-        <header className="sticky top-0 z-50 w-full">
-          <div className="brand-gradient absolute inset-0 opacity-60 -z-10" />
-          <div className="backdrop-blur-xl border-b border-default/60 bg-background/60">
-            <nav className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-              <Link href="/" className="font-semibold">
-                GANPI
-              </Link>
-              <div className="flex items-center gap-6 text-sm">
-                <Link href="/" className="hover:opacity-80 transition-opacity">Home</Link>
-                <Link href="/tutorial" className="hover:opacity-80 transition-opacity">Tutorial</Link>
-                <Link href="/faq" className="hover:opacity-80 transition-opacity">FAQ</Link>
-                <Link href="/about" className="hover:opacity-80 transition-opacity">About Us</Link>
-              </div>
-            </nav>
-          </div>
-        </header>
+        <Header />
         {children}
       </body>
     </html>
