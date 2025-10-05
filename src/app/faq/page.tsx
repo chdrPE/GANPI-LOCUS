@@ -137,18 +137,30 @@ export default function Page() {
             <p className="text-muted mb-6 max-w-2xl mx-auto">
               Our community and support team are here to help you get the most out of GANPI.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
               <a
-                href="mailto:support@ganpi.dev"
-                className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-white border border-default hover:bg-white/5 transition-colors w-full sm:w-auto"
+                href="mailto:cvillegasm2005@gmail.com"
+                className="inline-flex items-center justify-center rounded-full px-4 py-3 text-sm font-medium text-white border border-default hover:bg-white/5 transition-colors"
               >
-                📧 Contact Support
+                📧 Cesar Villegas
               </a>
               <a
-                href="https://github.com/ganpi/ganpi"
-                className="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium text-white border border-default hover:bg-white/5 transition-colors w-full sm:w-auto"
+                href="mailto:rodrigo.fidelponce@gmail.com"
+                className="inline-flex items-center justify-center rounded-full px-4 py-3 text-sm font-medium text-white border border-default hover:bg-white/5 transition-colors"
               >
-                🐙 GitHub Issues
+                📧 Rodrigo Fidel
+              </a>
+              <a
+                href="mailto:javierdeng89@gmail.com"
+                className="inline-flex items-center justify-center rounded-full px-4 py-3 text-sm font-medium text-white border border-default hover:bg-white/5 transition-colors"
+              >
+                📧 Javier Deng
+              </a>
+              <a
+                href="mailto:rgomero05@gmail.com"
+                className="inline-flex items-center justify-center rounded-full px-4 py-3 text-sm font-medium text-white border border-default hover:bg-white/5 transition-colors"
+              >
+                📧 Raul Gomero
               </a>
             </div>
           </div>

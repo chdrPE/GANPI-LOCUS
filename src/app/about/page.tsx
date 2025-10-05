@@ -191,7 +191,7 @@ export default function Page() {
             transition={{ duration: 0.6, delay: 1.0 }}
             className="max-w-4xl mx-auto rounded-2xl glass border-default overflow-hidden shadow-[0_10px_60px_rgba(0,0,0,0.35)]"
           >
-            <div className="aspect-[16/10] relative">
+            <div className="aspect-[3/4] relative">
               <Image
                 src="/group-photo.jpg.jpg"
                 alt="GANPI Team Group Photo"
@@ -227,12 +227,13 @@ export default function Page() {
               tasks accessible to everyone while maintaining the precision and power that developers need.
             </p>
             
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
               {[
                 { icon: "🌍", title: "Global Community", desc: "Building a worldwide network of developers" },
                 { icon: "🔧", title: "Advanced Features", desc: "IDE integration and enhanced AI capabilities" },
                 { icon: "📚", title: "Education", desc: "Comprehensive tutorials and learning resources" },
-                { icon: "🤝", title: "Open Source", desc: "Community-driven development and contributions" }
+                { icon: "🤝", title: "Open Source", desc: "Community-driven development and contributions" },
+                { icon: "🎤", title: "Voice to Text", desc: "Natural voice commands for hands-free terminal interaction" }
               ].map((goal, index) => (
                 <motion.div
                   key={goal.title}
