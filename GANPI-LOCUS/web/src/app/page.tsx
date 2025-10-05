@@ -45,10 +45,9 @@ export default function Home() {
 
           <h1 className="mt-6 text-pretty text-4xl font-semibold sm:text-6xl tracking-tight">
             <span className="align-middle mr-2">🧠</span>
-            GANPI
             <span className="text-transparent bg-clip-text" style={{
               backgroundImage: "linear-gradient(90deg, rgba(255,90,246,1), rgba(93,135,255,1))",
-            }}> – Gemini‑Assisted Natural Processing Interface</span>
+            }}>Gemini‑Assisted Natural Processing Interface</span>
           </h1>
           <p className="mt-5 text-lg text-muted max-w-2xl mx-auto">
             Talk to your terminal like a human. GANPI converts natural language into safe, precise shell commands — with previews before execution.
